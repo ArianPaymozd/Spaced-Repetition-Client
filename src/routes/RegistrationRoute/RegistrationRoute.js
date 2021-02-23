@@ -20,10 +20,12 @@ class RegistrationRoute extends Component {
         <p className='registration-message'>
           Practice learning a language with the spaced repetition revision technique.
         </p>
-        <h2 className='sign-up'>Sign up</h2>
-        <RegistrationForm
-          onRegistrationSuccess={this.handleRegistrationSuccess}
-        />
+        <div className='box-shadow'>
+          <h2 className='sign-up'>Sign up</h2>
+          <RegistrationForm
+            onRegistrationSuccess={this.handleRegistrationSuccess}
+          />
+        </div>
         <Goo />
       </section>
     );

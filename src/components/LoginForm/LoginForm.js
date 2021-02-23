@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Input, Label } from '../Form/Form'
+import { Input } from '../Form/Form'
 import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/UserContext'
 import Button from '../Button/Button'
@@ -30,6 +30,7 @@ class LoginForm extends Component {
         username.value = ''
         password.value = ''
         this.context.processLogin(res.authToken)
+        console.log(res.authToken)
         this.props.onLoginSuccess()
       })
       .catch(res => {
