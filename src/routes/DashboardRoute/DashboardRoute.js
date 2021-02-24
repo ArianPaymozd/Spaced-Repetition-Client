@@ -7,10 +7,16 @@ import './Dashboard.css'
 
 
 class DashboardRoute extends Component {
+  static defaultProps = {
+    history: {push: () => {}}
+  }
+
   state = {
     language: {},
     words: []
   }
+
+  static contextType = ApiContext
 
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/language`, {
@@ -25,7 +31,10 @@ class DashboardRoute extends Component {
       words: data.words
     }))
   }
-
+  
+  handleRedirect = () => {
+    this.props.history.push('/learn')
+  }
   
 getCorrectCount = (wordsArr) => {
   let correct = 0
@@ -40,12 +49,13 @@ getCorrectCount = (wordsArr) => {
       language: this.state.language,
       words: this.state.words
     }
+    console.log(value)
     return (
       <ApiContext.Provider value={value}>
         <section className='dashboard'>
           <h2 className='language'>{this.state.language.name}</h2>
             <p>Total correct: {this.getCorrectCount(this.state.words)}</p>
-            <button className='learn-button'>start learning</button>
+            <button className='learn-button' onClick={this.handleRedirect}>start learning</button>
           <WordsList />
         </section>
       </ApiContext.Provider>

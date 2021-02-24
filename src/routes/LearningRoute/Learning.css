@@ -1,0 +1,72 @@
+.learning-page {
+    position: relative;
+    z-index: 2;
+    margin: 10% auto;
+    background-color: #e36bae;
+    height: 20vh;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.253);
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 80% 20%;
+    grid-template-areas: 
+        'word scores'
+        'guess guess'
+    ;
+}
+
+.current-word {
+    grid-area: word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scores {
+    grid-area: scores;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.word-scores {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.correct {
+    color: rgb(44, 180, 44);
+}
+
+.incorrect {
+    color: rgb(236, 84, 84)
+}
+
+.guess {
+    grid-area: guess;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 3%;
+}
+
+.guess-input {
+    border-radius: 5px;
+    border: none;
+    margin-right: 1%;
+}
+
+.guess-check {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 1%;
+}
