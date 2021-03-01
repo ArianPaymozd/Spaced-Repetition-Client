@@ -41,7 +41,7 @@ export default class App extends Component {
               path={'/register'}
               component={RegistrationRoute}
             />
-            <PublicOnlyRoute
+            <Route
               path={'/login'}
               component={LoginRoute}
             />

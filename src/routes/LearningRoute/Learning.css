@@ -1,7 +1,12 @@
-.learning-page {
-    position: relative;
-    z-index: 2;
-    margin: 10% auto;
+.learning-page, .learning-page-result {
+    position: absolute;
+    z-index: 2;position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 15%;
+    text-align: center;
     background-color: #e36bae;
     height: 20vh;
     width: 80%;
@@ -15,6 +20,7 @@
         'word scores'
         'guess guess'
     ;
+    will-change: transform, opacity;
 }
 
 .current-word {
@@ -69,4 +75,27 @@
     border-radius: 5px;
     font-weight: bold;
     margin-left: 1%;
+}
+
+.learning-page-result {
+    grid-template-columns: 40% 20% 40%;
+    grid-template-rows: 10% 70% 15% 5%;
+    grid-template-areas: 
+        '. . .'
+        'result result result '
+        '. next .'
+        '. . .'
+    ;
+}
+
+.result {
+    grid-area: result;
+}
+
+.next {
+    grid-area: next;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
