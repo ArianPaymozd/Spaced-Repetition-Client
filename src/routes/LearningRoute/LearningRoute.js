@@ -1,16 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react'
 import {useSpring, animated} from 'react-spring'
-import ApiContext from '../../ApiContext';
 import Goo from '../../components/Goo/Goo';
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import './Learning.css'
 
 function LearningRoute() {
-  const context = useContext(ApiContext)
 
   const [isCorrect, setIsCorrect] = useState(false)
   const [word, setWord] = useState('')
+  const [answer, setAnswer] = useState('')
   const [totalScore, setTotalScore] = useState(0)
   const [correct, setCorrect] = useState(0)
   const [incorrect, setIncorrect] = useState(0)
@@ -51,16 +50,18 @@ function LearningRoute() {
     .then(res => res.json())
     .then(data => {
         setWord(data.nextWord)
+        setAnswer(data.answer)
         setTotalScore(data.totalScore)
         setCorrect(data.wordCorrectCount)
         setIncorrect(data.wordIncorrectCount)
         setIsCorrect(data.isCorrect)
     })
+    e.target['guess-input'].value = ''
   }
 
   return (
     <div>
-      <animated.div className='learning-page' style={{transform }}>
+      <animated.div className='learning-page' style={{ opacity: opacity.interpolate(o => 1 - o), transform }}>
           <h2 className='current-word'>{word}</h2>
           <div className='scores'>
             <h3 className='total-score'>{totalScore}</h3>
@@ -71,11 +72,12 @@ function LearningRoute() {
           </div>
           <form className='guess' onSubmit={handleGuess}>
             <input className='guess-input' name='guess-input' type='text' placeholder='Whats your guess?' />
-            <button className='guess-check' onClick={() => set(state => !state)}>Check</button>
+            <button type='submit' className='guess-check' onClick={() => set(state => !state)}>Check</button>
           </form>
       </animated.div>
       <animated.div className='learning-page-result' style={{ zIndex: flipped ? 2 : 0, transform: transform.interpolate(t => `${t} rotateX(180deg)`) }}>
         <h2 className='result'>{isCorrect ? 'Congrats! you got it right' : 'Oh no you were a little off!'}</h2>
+        <h3 className='answer'>{isCorrect ? ' ' : `The answer was "${answer}"`}</h3>
         <button className='next' onClick={() => set(state => !state)}>Next</button>
       </animated.div>
       <Goo />

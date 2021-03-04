@@ -29,6 +29,8 @@
     background-color: #e36bae;
     padding: 2%;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
 }
 
 .username {
@@ -38,11 +40,13 @@
     padding: 6px;
     margin: 0;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
 }
 
 @media only screen and (min-width: 500px) {
     .nav {
-        max-height: 50px;
+        max-height: 70px;
         justify-content: center;
     }
 

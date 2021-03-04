@@ -28,6 +28,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-size: 250%;
 }
 
 .scores {
@@ -37,6 +39,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-size: 170%;
 }
 
 .word-scores {
@@ -46,6 +50,7 @@
     background-color: #ffffff;
     border-radius: 8px;
     font-weight: bold;
+    font-size: 70%;
 }
 
 .correct {
@@ -79,10 +84,11 @@
 
 .learning-page-result {
     grid-template-columns: 40% 20% 40%;
-    grid-template-rows: 10% 70% 15% 5%;
+    grid-template-rows: 10% 30% 40% 15% 5%;
     grid-template-areas: 
         '. . .'
         'result result result '
+        'answer answer answer'
         '. next .'
         '. . .'
     ;
@@ -90,6 +96,14 @@
 
 .result {
     grid-area: result;
+    font-size: 160%;
+    color: white;
+}
+
+.answer {
+    grid-area: answer;
+    font-size: 140%;
+    color: white;
 }
 
 .next {

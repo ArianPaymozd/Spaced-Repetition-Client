@@ -1,14 +1,14 @@
-.hooks-main > svg {
+.goo-main  svg {
   display: none;
 }
 
-.hooks-main {
+.goo-main {
     top: 0;
     left: 0;
     z-index: 1;
 }
 
-.hooks-main > div {
+.goo-main  div {
   position: absolute;
   will-change: transform;
   border-radius: 50%;
@@ -17,25 +17,25 @@
   opacity: 0.6;
 }
 
-.hooks-main > div:nth-child(1) {
+.goo-main  div:nth-child(1) {
   width: 120px;
   height: 120px;
   z-index: -1;
 }
 
-.hooks-main > div:nth-child(2) {
+.goo-main  div:nth-child(2) {
   width: 200px;
   height: 200px;
   z-index: -1;
 }
 
-.hooks-main > div:nth-child(3) {
+.goo-main  div:nth-child(3) {
   width: 250px;
   height: 250px;
   z-index: -1;
 }
 
-.hooks-main > div::after {
+.goo-main  div::after {
   content: '';
   position: absolute;
   top: 20px;
@@ -46,21 +46,21 @@
   background: rgba(255, 255, 255, 0.8);
 }
 
-.hooks-main > div:nth-child(2)::after {
+.goo-main  div:nth-child(2)::after {
   top: 70px;
   left: 70px;
   width: 70px;
   height: 70px;
 }
 
-.hooks-main > div:nth-child(3)::after {
+.goo-main  div:nth-child(3)::after {
   top: 50px;
   left: 50px;
   width: 50px;
   height: 50px;
 }
 
-.hooks-main {
+.goo-main {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -69,7 +69,7 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .hooks-main {
+    .goo-main {
         display: none;
     }
 }

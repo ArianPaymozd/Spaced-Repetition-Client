@@ -16,7 +16,7 @@ export default function Goo() {
           <feColorMatrix in="blur" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 30 -7" />
         </filter>
       </svg>
-      <div className="hooks-main" onMouseMove={e => set({ xy: [e.clientX, e.clientY] })}>
+      <div className="goo-main" onMouseMove={e => set({ xy: [e.clientX, e.clientY] })}>
         {trail.map((props, index) => (
           <a.div key={index} style={{ transform: props.xy.interpolate(trans) }} />
         ))}
