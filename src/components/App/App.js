@@ -9,13 +9,20 @@ import DashboardRoute from '../../routes/DashboardRoute/DashboardRoute'
 import LearningRoute from '../../routes/LearningRoute/LearningRoute'
 import NotFoundRoute from '../../routes/NotFoundRoute/NotFoundRoute'
 import './App.css'
+import UserContext from '../../contexts/UserContext'
 
 export default class App extends Component {
   state = { hasError: false }
 
+  static contextType = UserContext
+
   static getDerivedStateFromError(error) {
     console.error(error)
     return { hasError: true }
+  }
+
+  componentWillUnmount() {
+    this.context.processLogout()
   }
 
   render() {

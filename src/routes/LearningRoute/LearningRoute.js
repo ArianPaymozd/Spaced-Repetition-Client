@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useSpring, animated} from 'react-spring'
 import Goo from '../../components/Goo/Goo';
 import config from '../../config';
