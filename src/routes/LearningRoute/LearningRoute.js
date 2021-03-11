@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import {useSpring, animated} from 'react-spring'
 import Goo from '../../components/Goo/Goo';
 import config from '../../config';
+import UserContext from '../../contexts/UserContext';
 import TokenService from '../../services/token-service';
 import './Learning.css'
 
@@ -14,6 +15,7 @@ function LearningRoute() {
   const [correct, setCorrect] = useState(0)
   const [incorrect, setIncorrect] = useState(0)
   const [flipped, set] = useState(false)
+  const context = useContext(UserContext)
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
@@ -44,7 +46,7 @@ function LearningRoute() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        guess: e.target['guess-input'].value
+        guess: e.target['guess-input'].value.toLowerCase()
       })
     })
     .then(res => res.json())
@@ -80,7 +82,7 @@ function LearningRoute() {
         <h3 className='answer'>{isCorrect ? ' ' : `The answer was "${answer}"`}</h3>
         <button className='next' onClick={() => set(state => !state)}>Next</button>
       </animated.div>
-      <Goo />
+      {context.goo ? <Goo /> : null}
   </div>
   );
   

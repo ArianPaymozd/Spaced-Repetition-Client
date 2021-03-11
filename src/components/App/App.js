@@ -21,10 +21,6 @@ export default class App extends Component {
     return { hasError: true }
   }
 
-  componentWillUnmount() {
-    this.context.processLogout()
-  }
-
   render() {
     const { hasError } = this.state
     return (

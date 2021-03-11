@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Goo from '../../components/Goo/Goo'
 import LoginForm from '../../components/LoginForm/LoginForm'
+import UserContext from '../../contexts/UserContext'
 
 class LoginRoute extends Component {
   static defaultProps = {
@@ -9,6 +10,8 @@ class LoginRoute extends Component {
       push: () => { },
     },
   }
+
+  static contextType = UserContext
 
   handleLoginSuccess = () => {
     const { location, history } = this.props
@@ -25,7 +28,7 @@ class LoginRoute extends Component {
             onLoginSuccess={this.handleLoginSuccess}
           />
         </div>
-        <Goo />
+        {this.context.goo ? <Goo /> : null}
       </section>
     );
   }

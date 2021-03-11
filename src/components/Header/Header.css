@@ -10,7 +10,7 @@
 .title a{
     color: black;
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
 }
 
 .nav {
@@ -24,7 +24,7 @@
 }
 
 .nav a {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
     background-color: #e36bae;
     padding: 2%;
@@ -34,12 +34,24 @@
 }
 
 .username {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
     background-color: #e36bae;
     padding: 6px;
     margin: 0;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.animations {
+    color: #000000;
+    text-decoration: none;
+    background-color: #e36bae;
+    padding: 6px;
+    margin: 0;
+    border-radius: 8px;
+    border: none;
     display: flex;
     align-items: center;
 }

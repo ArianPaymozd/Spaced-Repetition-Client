@@ -24,6 +24,7 @@ class Header extends Component {
             to='/login'>
             Logout
           </Link>
+          <button className='animations' onClick={this.context.setGoo}>{`Animations: ${this.context.goo ? 'on' : 'off'}`}</button>
         </nav>
       </div>
     )
@@ -35,6 +36,7 @@ class Header extends Component {
         <Link className='login' to='/login'>Login</Link>
         {' '}
         <Link className='register' to='/register'>Sign up</Link>
+        <button className='animations' onClick={this.context.setGoo}>{`Animations: ${this.context.goo ? 'on' : 'off'}`}</button>
       </nav>
     )
   }
